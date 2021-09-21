@@ -9,7 +9,7 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn start
+yarn dev
 ```
 
 ### Compiles and minifies for production
@@ -27,11 +27,6 @@ yarn lint
 yarn generate
 ```
 
-### Customize configuration
-See [Configuration Reference](https://vitejs.dev/config/).
-
-## Browser adaptation
-
 ### Rem Unit (default)
 
 Vant uses `px` unit by default,You can use tools such as `postcss-pxtorem` to transform `px` unit to `rem` unit.
@@ -39,21 +34,6 @@ Vant uses `px` unit by default,You can use tools such as `postcss-pxtorem` to tr
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
 - [lib-flexible](https://github.com/amfe/lib-flexible)
 
-#### PostCSS Config
-
-PostCSS config example:
-
-```js
-// .postcssrc.js
-module.exports = {
-  plugins: {
-    'postcss-pxtorem': {
-      rootValue: 37.5,
-      propList: ['*'],
-    },
-  },
-};
-```
 
 ### Viewport Units
 
@@ -69,25 +49,6 @@ module.exports = {
   plugins: {
     'postcss-px-to-viewport': {
       viewportWidth: 375,
-    },
-  },
-};
-```
-
-### Custom rootValue
-
-If the size of the design draft is 750 or other sizes, you can adjust the `rootValue` to:
-
-```js
-// .postcssrc.js
-module.exports = {
-  plugins: {
-    // postcss-pxtorem version >= 5.0.0
-    'postcss-pxtorem': {
-      rootValue({ file }) {
-        return file.indexOf('vant') !== -1 ? 37.5 : 75;
-      },
-      propList: ['*'],
     },
   },
 };
